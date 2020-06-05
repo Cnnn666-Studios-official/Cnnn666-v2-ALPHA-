@@ -29,27 +29,25 @@ const commands = new discord.command.CommandGroup({
   defaultPrefix: '' // You can customize your default prefix here.
 });
 
-// A simple command, !ping -> Pong!
-commands.raw('version', (message) => message.reply('a1.1.0'));
-commands.raw('about', (message) =>
+//Commands: help commands
+commands.raw('Help', (message) =>
   message.reply(
-    'Cnnn666 v2 [BOT] - it is next version bot of Cnnn666 [BOT]. This bot is better developed. It will get more and better functions. Bot is in early ALPHA tests.'
+    '> Help menu a1.6\n**Commands help - HelpC**\n**Bot Info - BotH**\n**Server Info - HelpS**'
   )
 );
-commands.raw('help', (message) =>
+commands.raw('BotH', (message) =>
   message.reply(
-    '> Help menu a1.0:\nCommand help -> HelpC\nBot help - BotH\nCreator info - InfoCH'
+    '> Bot Help - Help centre\n**Version - shows bot version**\n**SourceCode - giving link to github**\n**AboutB - shows info about bot**\nAboutC - shows info about creator**\n**News - shows what is new in actual version**\n**VersionH - shows all updates for all version**'
   )
 );
-commands.raw('Hi', (message) => message.reply('sup?'));
-commands.raw('InfoCH', (message) =>
+commands.raw('version', (message) => message.reply('Bot Version - a1.3.0'));
+
+commands.raw('News', (message) =>
   message.reply(
-    '> Creator Info CMD\nAbout - shows info about bot\nAboutC - shows info about creator'
+    'What is new in **a1.3.0**:\n[+]Added some new commands\n[+]Some visual changes\n[+]Fixed bugs\n[+]Added update log (starts from this version)\n[+/-]Bot coded from 0'
   )
 );
-commands.raw('AboutC', (message) =>
-  message.reply('Bot created and developed by: Cnnn666 Studios#0051')
-);
+
 // Another example, fetching some data from the web, using the `fetch` function.
 commands.raw('catfact', async (message) => {
   // We're going to fetch a fact from the cat-fact API.
